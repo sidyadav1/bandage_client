@@ -1,0 +1,280 @@
+.cartPage {
+    width: 100%;
+}
+
+.navigation {
+    width: 100%;
+    background-color: #fafafa;
+    padding: 0 1rem;
+}
+
+.navigationContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.navPrevious {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #252b42;
+}
+
+.navSeparator {
+    height: 1rem;
+    margin: 0 1rem;
+}
+
+.navCurrent {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #bdbdbd;
+}
+
+.cart {
+    width: 100%;
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.cartItems {
+    width: calc(100% - 370px);
+}
+
+.emptyCart {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.emptyCart > img {
+    max-width: 100%;
+    margin: auto;
+}
+
+.payment {
+    width: 370px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+    overscroll-behavior: contain;
+    background-color: #fff;
+    height: fit-content;
+}
+
+.paymentHeader {
+    color: #252b42;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 28px;
+    text-align: center;
+    border-bottom: 0.5px solid #e4e7ec;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.orderDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.orderDetailsTitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 150%;
+    color: #667085;
+}
+
+.orderDetailsValue {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #475467;
+}
+
+.orderTotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.orderTotalTitle {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 150%;
+    color: #344054;
+}
+
+.orderTotalValue {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #252b42;
+}
+
+.placeOrder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3669c9;
+    border-radius: 0.2rem;
+    width: 100%;
+    border: none;
+    padding: 0.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.placeOrder > img {
+    margin-left: 1rem;
+}
+
+.placeOrder:disabled {
+    background-color: lightgray;
+}
+
+.customOrderHint {
+    width: 100%;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 120%;
+    text-align: center;
+    color: #667085;
+}
+
+.statusContainer {
+    width: 100%;
+    padding: 2rem 0.5rem;
+    background-color: #d5e3fd;
+}
+
+.statusDetails {
+    padding: 4rem 5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    width: fit-content;
+    margin: auto;
+}
+
+.orderSuccessImg,
+.orderFailImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.orderSuccessImg {
+    background-color: #d5e3fd;
+}
+
+.orderFailImg {
+    background-color: #fdd5d5;
+}
+
+.thanksMessage {
+    width: 100%;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 120%;
+    text-align: center;
+    color: #3669c9;
+    margin-bottom: 2rem;
+}
+
+.statusmessage {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.transaction {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 28px;
+    margin-bottom: 2rem;
+}
+
+.backToHome {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    border: 2px solid #3669c9;
+    color: #3669c9;
+    text-decoration: none;
+}
+
+.backToHome > img {
+    margin-right: 1rem;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+}
+
+.orderProcessMsg {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .cartContainer {
+        flex-direction: column;
+    }
+
+    .cartItems {
+        width: 100%;
+    }
+
+    .payment {
+        width: 100%;
+        margin: 0;
+    }
+
+    .emptyCart {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .statusDetails {
+        padding: 4rem 1rem;
+    }
+}

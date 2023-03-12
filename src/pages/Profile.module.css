@@ -1,0 +1,123 @@
+.profilePage {
+    width: 100%;
+}
+
+.navigation {
+    width: 100%;
+    background-color: #fafafa;
+    padding: 0 1rem;
+}
+
+.navigationContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.navPrevious {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #252b42;
+}
+
+.navSeparator {
+    height: 1rem;
+    margin: 0 1rem;
+}
+
+.navCurrent {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #bdbdbd;
+}
+
+.profile {
+    width: 100%;
+    padding: 0rem 1rem;
+    background-color: #d5e3fd;
+    padding: 0 1rem;
+}
+
+.profileContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 6rem 0;
+}
+
+.userPicture {
+    width: 220px;
+    border-radius: 50%;
+    margin: auto 0;
+}
+
+.userDetails {
+    margin-left: 2rem;
+}
+
+.name {
+    color: #000;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 20px;
+    margin-bottom: 1rem;
+}
+
+.email {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 20px;
+    margin-bottom: 1rem;
+}
+
+.phone {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 20px;
+    margin-bottom: 1rem;
+}
+
+.logout {
+    color: #3669c9;
+    border: 1px solid #3669c9;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .profileContainer {
+        flex-direction: column;
+    }
+
+    .userDetails {
+        margin: 0;
+    }
+
+    .userPicture {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+
+    .name,
+    .email,
+    .phone,
+    .logout {
+        text-align: center;
+    }
+
+    .logout {
+        width: 100%;
+    }
+}

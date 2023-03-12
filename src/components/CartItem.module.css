@@ -1,0 +1,121 @@
+.cartItem {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow-y: hidden;
+}
+
+.image {
+    width: 156px;
+    height: 156px;
+    min-width: 156px;
+    font-size: 0.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    height: 100%;
+    overflow: hidden;
+}
+
+.name {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #252b42;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.brand {
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #737373;
+}
+
+.prices {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.original {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.1rem;
+    letter-spacing: 0.1px;
+    color: #bdbdbd;
+    text-decoration: line-through;
+}
+
+.discounted {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.1rem;
+    letter-spacing: 0.1px;
+    color: #3669c9;
+    margin-left: 1rem;
+}
+
+.itemOptions {
+    justify-self: flex-end;
+}
+
+.quantity {
+    padding: 0.6rem 2rem;
+    border-radius: 0.3rem;
+    background-color: #3669c9;
+    border: 2px solid #3669c9;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.delete {
+    padding: 0.5rem 3rem;
+    border-radius: 0.3rem;
+    border: 2px solid #3669c9;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 20px;
+    text-align: center;
+    color: #3669c9;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .quantity {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .itemOptions {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cartItem {
+        width: 100%;
+    }
+}

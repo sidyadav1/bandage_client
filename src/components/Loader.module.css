@@ -1,0 +1,17 @@
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 0.3rem solid lightgray;
+    border-top: 0.3rem solid #3669c9;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

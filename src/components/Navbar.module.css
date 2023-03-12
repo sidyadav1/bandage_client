@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    height: 80px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 0.8rem 2rem;
+    background-color: #fff;
+    height: 80px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-bottom: 1px solid #fafafa;
+    z-index: 1000;
+}
+
+.spacer {
+    height: 100%;
+}
+
+.homeNav {
+    text-decoration: none;
+}
+
+.logo {
+    color: #252b42;
+    font-size: 24px;
+    letter-spacing: 0.1px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.authLinks {
+    color: #3669c9;
+}
+
+.authLink {
+    color: #3669c9;
+    text-decoration: none;
+    margin: 0px 0.5rem;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.userLinks {
+    display: flex;
+    align-items: center;
+}
+
+.userLinks > a {
+    width: 48px;
+    padding: 0.2rem;
+    margin-left: 1rem;
+}
+
+.userItemLinks {
+    position: relative;
+    width: 28px;
+    padding: 0.2rem;
+    margin-left: 1rem;
+}
+
+.cartFilled {
+    font-size: 5rem;
+    position: absolute;
+    top: -1rem;
+    right: -0.3rem;
+    color: red;
+    line-height: 0;
+}
+
+.userProfile {
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid #3669c9;
+    margin: auto;
+}
+
+.cart {
+    width: 20px;
+}
+
+.bottomNav {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar > a {
+        margin: auto;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .userLinks {
+        display: none;
+    }
+
+    .authLinks {
+        display: none;
+    }
+
+    .bottomNav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        padding: 1rem;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
