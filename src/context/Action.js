@@ -6,3 +6,4 @@ export const FILL_CART = "FILL_CART";
 export const UPDATE_ITEM_QUANTITY = "UPDATE_ITEM_QUANTITY";
 export const DELETE_CART_ITEM = "DELETE_CART_ITEM";
 export const EMPTY_CART = "EMPTY_CART";
+export const SET_PRODUCTS = "SET_PRODUCTS";

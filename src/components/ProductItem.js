@@ -5,15 +5,18 @@ import { ADD_CART_ITEM, ADD_TO_CART } from "../context/Action";
 import { UserContext, UserDispatchContext } from "../context/UserContext";
 import productCss from "./ProductItem.module.css";
 import { toast } from "react-toastify";
+import Loader from "../components/Loader";
 
 const Product = ({ product }) => {
     const { id, name, images, price, brand } = product;
     const { cart, user } = useContext(UserContext);
     const [inCart, setInCart] = useState(false);
+    const [isAdding, setIsAdding] = useState(false);
 
     const dispatch = useContext(UserDispatchContext);
 
     const handleAddItemToCart = () => {
+        setIsAdding(true);
         const toastId = toast.loading("Adding product to your cart....");
         addProductToCart({ productId: id, quantity: 1 })
             .then((result) => {
@@ -50,6 +53,7 @@ const Product = ({ product }) => {
                     closeOnClick: true,
                 });
             });
+        setIsAdding(false);
     };
 
     useEffect(() => {
@@ -87,6 +91,8 @@ const Product = ({ product }) => {
                     <Link to={"/cart"} className={productCss.goToCart}>
                         <p className={productCss.addToCart}>Go To Cart</p>
                     </Link>
+                ) : isAdding ? (
+                    <Loader />
                 ) : (
                     <p
                         className={productCss.addToCart}

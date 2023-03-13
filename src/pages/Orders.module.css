@@ -96,3 +96,18 @@
     color: #3669c9;
     margin-left: 1rem;
 }
+
+.noOrders {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50vh;
+}
+
+.noOrdersText {
+    text-align: center;
+    color: #252b42;
+    font-size: 1rem;
+    font-weight: 500;
+}

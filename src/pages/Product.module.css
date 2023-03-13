@@ -210,3 +210,25 @@
         margin: 0;
     }
 }
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.errorDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50vh;
+}
+
+.error {
+    text-align: center;
+    color: #252b42;
+    font-size: 1rem;
+    font-weight: 600;
+}

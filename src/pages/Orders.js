@@ -54,6 +54,12 @@ const Orders = () => {
                     <div className={ordersCss.loaderContainer}>
                         <Loader />
                     </div>
+                ) : orders.length === 0 ? (
+                    <div className={ordersCss.noOrders}>
+                        <p className={ordersCss.noOrdersText}>
+                            ~You haven't placed any orders yet~
+                        </p>
+                    </div>
                 ) : (
                     orders.map((order) => {
                         return (

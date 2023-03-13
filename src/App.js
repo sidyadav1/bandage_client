@@ -13,13 +13,15 @@ import Public from "./routes/Public";
 import { useContext, useEffect, useState } from "react";
 import { UserDispatchContext } from "./context/UserContext";
 import { getUser } from "./APIs/auth";
-import { FILL_CART, SET_USER } from "./context/Action";
+import { FILL_CART, SET_PRODUCTS, SET_USER } from "./context/Action";
 import Loader from "./components/Loader";
 import { getUserCart } from "./APIs/cart";
 import Auth from "./routes/Auth";
 import Product from "./pages/Product";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { getProducts } from "./APIs/products";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
     const dispatch = useContext(UserDispatchContext);
@@ -47,6 +49,16 @@ function App() {
         };
 
         fetchUser();
+
+        const fetchProducts = () => {
+            getProducts().then((result) => {
+                dispatch({
+                    type: SET_PRODUCTS,
+                    products: result.data,
+                });
+            });
+        };
+        fetchProducts();
         // eslint-disable-next-line
     }, []);
 
@@ -109,6 +121,7 @@ function App() {
                             }
                         />
                         <Route
+                            exact
                             path="/"
                             element={
                                 <Public>
@@ -116,6 +129,7 @@ function App() {
                                 </Public>
                             }
                         />
+                        <Route path={"*"} element={<PageNotFound />} />
                     </Routes>
                     <Footer />
                 </>

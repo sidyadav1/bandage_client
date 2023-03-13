@@ -5,6 +5,7 @@
     border: 0.3rem solid lightgray;
     border-top: 0.3rem solid #3669c9;
     animation: rotate 1s linear infinite;
+    margin: auto;
 }
 
 @keyframes rotate {

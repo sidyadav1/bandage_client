@@ -4,6 +4,7 @@ import {
     EMPTY_CART,
     FILL_CART,
     LOGOUT_USER,
+    SET_PRODUCTS,
     SET_USER,
     UPDATE_ITEM_QUANTITY,
 } from "./Action";
@@ -13,6 +14,7 @@ export const initialState = {
     cart: [],
     cartProducts: {},
     orders: [],
+    products: [],
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -52,6 +54,9 @@ export const userReducer = (state = initialState, action) => {
         }
         case EMPTY_CART: {
             return { ...state, cart: [] };
+        }
+        case SET_PRODUCTS: {
+            return { ...state, products: action.products };
         }
         default: {
             return state;

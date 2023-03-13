@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { register } from "../APIs/auth";
 import Loader from "../components/Loader";
 import { SET_USER } from "../context/Action";
@@ -120,6 +121,7 @@ const Registration = () => {
                         user,
                     });
                     localStorage.setItem("auth_token", token);
+                    toast("Account created successfully");
                     navigate("/");
                 })
                 .catch((error) => {

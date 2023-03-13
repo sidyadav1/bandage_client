@@ -17,6 +17,7 @@ const Product = () => {
     const dispatch = useContext(UserDispatchContext);
 
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [product, setProduct] = useState({
         id: "",
         name: "",
@@ -29,9 +30,13 @@ const Product = () => {
 
     useEffect(() => {
         setLoading(true);
-        getProductById({ id }).then((result) => {
-            setProduct(result.data);
-        });
+        getProductById({ id })
+            .then((result) => {
+                setProduct(result.data);
+            })
+            .catch((error) => {
+                setError("Product Not found");
+            });
         setLoading(false);
     }, [id]);
 
@@ -124,6 +129,10 @@ const Product = () => {
             {loading ? (
                 <div className={productCss.loader}>
                     <Loader />
+                </div>
+            ) : error ? (
+                <div className={productCss.errorDiv}>
+                    <p className={productCss.error}>{error}</p>
                 </div>
             ) : (
                 <div className={productCss.productContainer}>

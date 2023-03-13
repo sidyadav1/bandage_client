@@ -13,9 +13,9 @@ const CartItem = ({ cartItem }) => {
 
     const handleQuantityChange = (e) => {
         const tempQuantity = e.target.value;
-        setQuantity(tempQuantity);
 
         updateQuantity({ id, quantity: tempQuantity }).then(() => {
+            setQuantity(tempQuantity);
             dispatch({
                 type: UPDATE_ITEM_QUANTITY,
                 id,
