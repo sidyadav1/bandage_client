@@ -14,7 +14,7 @@ export const placeOrder = ({ products, amount }) => {
             data: JSON.stringify({ products, amount }),
         })
             .then((result) => resolve(result.data))
-            .catch((error) => reject(error.response.data));
+            .catch((error) => reject(error.response));
     });
 };
 

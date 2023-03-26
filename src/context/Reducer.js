@@ -26,7 +26,13 @@ export const userReducer = (state = initialState, action) => {
             return { ...state, cart: action.cart };
         }
         case LOGOUT_USER: {
-            return { user: null, cart: [], orders: [], cartProducts: {} };
+            return {
+                ...state,
+                user: null,
+                cart: [],
+                orders: [],
+                cartProducts: {},
+            };
         }
         case ADD_TO_CART: {
             return {

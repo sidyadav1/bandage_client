@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext, UserDispatchContext } from "../context/UserContext";
 import CartItem from "../components/CartItem";
 import { placeOrder } from "../APIs/orders";
-import { EMPTY_CART } from "../context/Action";
+import { EMPTY_CART, FILL_CART } from "../context/Action";
 import empty from "../assets/empty.png";
 import success from "../assets/success.svg";
 import fail from "../assets/fail.svg";
@@ -52,7 +52,16 @@ const Cart = () => {
                 dispatch({ type: EMPTY_CART });
                 setOrderStatus(true);
             })
-            .catch(() => {
+            .catch((result) => {
+                if (result.status === 409) {
+                    dispatch({
+                        type: FILL_CART,
+                        cart:
+                            (Array.isArray(result.data.data) &&
+                                result.data.data) ||
+                            [],
+                    });
+                }
                 setOrderStatus(false);
             })
             .finally(() => {
