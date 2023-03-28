@@ -69,6 +69,8 @@ const Registration = () => {
         }
         if (validatePhone(tempPhone)) {
             setPhoneError(null);
+        } else {
+            setPhoneError("Enter a valid phone number");
         }
         setPhone(tempPhone);
     };
@@ -184,7 +186,8 @@ const Registration = () => {
                         onChange={handlePhoneChange}
                         id="phone"
                         className={authCss.input}
-                        type={"number"}
+                        type={"tel"}
+                        maxLength={10}
                         placeholder="9999999999"
                     />
                     {phoneError ? (

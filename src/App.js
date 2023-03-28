@@ -11,7 +11,7 @@ import Profile from "./pages/Profile";
 import Protected from "./routes/Protected";
 import Public from "./routes/Public";
 import { useContext, useEffect, useState } from "react";
-import { UserDispatchContext } from "./context/UserContext";
+import { UserContext, UserDispatchContext } from "./context/UserContext";
 import { getUser } from "./APIs/auth";
 import { FILL_CART, SET_PRODUCTS, SET_USER } from "./context/Action";
 import Loader from "./components/Loader";
@@ -25,6 +25,7 @@ import PageNotFound from "./pages/PageNotFound";
 
 function App() {
     const dispatch = useContext(UserDispatchContext);
+    const { user } = useContext(UserContext);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -38,13 +39,7 @@ function App() {
                     user: result.data,
                 });
             });
-            getUserCart().then((result) => {
-                const cart = result.data;
-                dispatch({
-                    type: FILL_CART,
-                    cart: cart,
-                });
-            });
+
             setIsLoading(false);
         };
 
@@ -61,6 +56,17 @@ function App() {
         fetchProducts();
         // eslint-disable-next-line
     }, []);
+
+    useEffect(() => {
+        getUserCart().then((result) => {
+            const cart = result.data;
+            dispatch({
+                type: FILL_CART,
+                cart: cart,
+            });
+        });
+        // eslint-disable-next-line
+    }, [user]);
 
     return (
         <div className="App">
